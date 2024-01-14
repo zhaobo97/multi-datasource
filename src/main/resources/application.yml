@@ -1,0 +1,29 @@
+server:
+  port: 8081
+
+ds1:
+  url: jdbc:mysql://localhost:3306/message?useUnicode=true&characterEncoding=utf8&useOldAliasMetadataBehavior=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+  username: root
+  password: zhaobo
+  driver-class-name: com.mysql.cj.jdbc.Driver
+ds2:
+  url: jdbc:mysql://192.168.25.131:3306/userdb?useUnicode=true&characterEncoding=utf8&useOldAliasMetadataBehavior=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+  username: root
+  password: zhaobo
+  driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/**/*Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    default-executor-type: simple
+    call-setters-on-nulls: true
+    cache-enabled: false
+    default-statement-timeout: 1500
+spring:
+  datasource:
+    druid:
+      initial-size: 5
+      max-active: 10
+      min-idle: 5
+      max-wait: 60000
